@@ -1,22 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
 <title>Linux Online</title>
-</head>
-<body>
-<input id="foo" type="text"></input>
+<body style="
+    background: black;
+">
+<input id="input" type="text" style="
+    width: 300px;
+    color: #00ff00;
+    background: black;
+    outline: black;
+    border: black;
+">
 <script>
-function hndl() {
-alert(document.getElementById('foo').value)
+function hndl(comm) {
+alert(comm)
 }
-document.getElementById('foo').onkeypress = function(e){
+document.getElementById('input').onkeypress = function(e){
     if (!e) e = window.event;
     var keyCode = e.keyCode || e.which;
     if (keyCode == '13'){
-      hndl();
+      hndl(document.getElementById('input').value);
       return false;
     }
   }
 </script>
-</body>
-</html>
+
+
+</body></html>
