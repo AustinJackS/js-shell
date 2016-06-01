@@ -1,7 +1,22 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Linux Online</title>
 </head>
 <body>
+<input id="foo" type="text"></input>
+<script>
+function hndl() {
+alert(document.getElementById('foo').value)
+}
+document.getElementById('foo').onkeypress = function(e){
+    if (!e) e = window.event;
+    var keyCode = e.keyCode || e.which;
+    if (keyCode == '13'){
+      hndl();
+      return false;
+    }
+  }
+</script>
 </body>
 </html>
