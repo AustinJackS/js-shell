@@ -27,9 +27,11 @@ function loadDoc(url) {
 <script>
 var code = 'var scom = comm.split(" ");if (scom[0] == "echo") {document.getElementById("output").innerHTML += "<br>"+comm.substring(5);}if (scom[0]=="clear") {document.getElementById("output").innerHTML = "";}if (scom[0]=="web-get") {loadDoc(scom[1]);};';function hndl(comm) {
 eval(code);
+document.getElementById('input').value = '';
 }
 function wgh(rtext) {
 code += rtext;
+alert('sucsess!');
 }
 document.getElementById('input').onkeypress = function(e){
     if (!e) e = window.event;
