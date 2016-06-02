@@ -1,18 +1,35 @@
 <html><head>
 <title>Linux Online</title>
+<script>
+function loadDoc(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      wgh(xhttp.responseText);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+</script>
+</head>
 <body style="
     background: black;
 ">
-<input id="input" type="text" style="
+<p style="color: #00ff00;display: inline">root@linux:#  </p><input id="input" type="text" style="
     width: 300px;
     color: #00ff00;
     background: black;
     outline: black;
     border: black;
-">
+"><br>
+<p id="output" style="color:#00ff00"></p>
 <script>
-function hndl(comm) {
-alert(comm)
+var code = 'var scom = comm.split(" ");if (scom[0] == "echo") {document.getElementById("output").innerHTML += "<br>"+comm.substring(5);}if (scom[0]=="clear") {document.getElementById("output").innerHTML = "";}if (scom[0]=="web-get") {loadDoc(scom[1]);}';function hndl(comm) {
+eval(code);
+}
+function wgh(rtext) {
+alert(rtext);
 }
 document.getElementById('input').onkeypress = function(e){
     if (!e) e = window.event;
