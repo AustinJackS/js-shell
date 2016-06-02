@@ -1,1 +1,1 @@
-if (scom[0] == 'alert') {alert(scom[1]);};
+if (scom[0] == 'alert') {alert(comm.substring(6);};
